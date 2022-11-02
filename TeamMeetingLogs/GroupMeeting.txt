@@ -1,4 +1,5 @@
 Meeting 1 (11/02/22) / 11:30 am
 - Decided to make a manual list of data for the resorts.
-- Made more user stories
-- Decided the general format of tables and making a ER diagram
+- Made more user stories.
+- Decided the general format of tables and making a ER diagram.
+- Decided to focus on all resorts in Colorado.
