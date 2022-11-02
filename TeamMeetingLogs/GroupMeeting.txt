@@ -3,3 +3,4 @@ Meeting 1 (11/02/22) / 11:30 am - 12:30 pm
 - Made more user stories.
 - Decided the general format of tables and making a ER diagram.
 - Decided to focus on all resorts in Colorado.
+- Added our group project doc to repo.
