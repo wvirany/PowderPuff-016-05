@@ -48,22 +48,18 @@ app.get("/", (req, res) => {
 });
 
 //GET request for "/home"
-app.get("/home", (req, res) => {
+// app.get("/home", (req, res) => {
 
-    var query = `SELECT * FROM resorts ORDER BY resorts.rating;`;
+//     var query = `SELECT * FROM resorts ORDER BY resorts.rating;`;
 
-    db.any(query)
-        .then(function (data) {
-            response.status(200).json({
-                status: 'success',
-                data: data,
-                message: 'Data Retrieved Successfully',
-            });
-        })
-        .catch(function (err) {
-            return console.log(err);
-        })
-});
+//     db.any(query)
+//         .then( () {
+//             res.render("pages/home");
+//         })
+//         .catch((err) {
+//             return console.log(err);
+//         })
+// });
 
 app.listen(3000);
 console.log('Server is listening on port 3000');
