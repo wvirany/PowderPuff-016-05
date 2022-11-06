@@ -42,7 +42,10 @@ app.use(
     })
 );
 
-
+//Get request for "/"
+app.get("/", (req, res) => {
+    res.redirect("/login");
+});
 
 
 
