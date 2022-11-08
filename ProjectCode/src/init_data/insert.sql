@@ -26,3 +26,56 @@ INSERT INTO resorts (resort_id, name,  location, elevation, annual_snowfall, ter
   (25, 'Vail', 'Vail', 8120, 354, 2, 'https://www.vail.com/', 'https://images.squarespace-cdn.com/content/v1/581517e115d5dbcebac21922/1551666755876-9V8USK7XRNQVACIXKVPW/Vail+Ski+Resort-1.jpg?format=2500w'),
   (26, 'Winter Park', 'Winter Park', 9000, 327, 7, 'https://www.winterparkresort.com/', 'https://www.coloradoski.com/sites/default/files/2018-09/CSC%20Cover.jpg'),
   (27, 'Wolf Creek', 'Pagosa Springs', 10300, 430, 0, 'https://wolfcreekski.com/wolf-creek-stats-facts/', 'https://www.powderhounds.com/site/DefaultSite/filesystem/images/USA/WolfCreek/Overview/02.jpg');
+  
+  INSERT INTO runs 
+INSERT INTO runs(run_id, name, difficulty) VALUES
+(1, 'columbine', 'blue'),/* arapahoe runs  */
+(2, 'jump', 'EX'),
+(3, 'stepplechase', 'double black'),/* aspen highlands  */
+(4, 'hayden', 'blue'),
+(5, '4', 'blue'),/* aspen mountain */
+(6, 'outlaw', 'double black'),
+(7, 'moonshine', 'black'),/* beaver creek */
+(8, 'centenial', 'blue');
+
+
+insert into resorts_to_runs(resort_id, run_id) VALUES
+(1,1),
+(1,2),
+(2,3),
+(2,4),
+(3,5),
+(3,6),
+(4,7),
+(4,8);
+
+insert into users(username,password,email)VALUES
+('dylanE415', 'Password#123', 'dylaneilber@gmail.com'),
+('user4', 'Urmom#123', 'user4@gmail.com');
+
+insert into reviews(review_id, description, rating)VALUES
+(1,'this resort was amazing',5),
+(2,'this resort was amazing but the food was bad',4),
+(3,'this resort was mid',3),
+(4,'this resort was pretty bad',2),
+(5,'this resort was the worst expirience of my life',1),
+(6,'the runs were amazing 10/10!',5),
+(7,'I really enjoyed my stay',4);
+
+insert into users_to_reviews(review_id,user_id)VALUES
+(1,1),
+(2,1),
+(3,1),
+(4,1),
+(5,1),
+(6,2),
+(7,2);
+
+insert into resorts_to_reviews(resort_id, review_id)VALUES
+(1,1),
+(1,6),
+(2,2),
+(5,3),
+(10,4),
+(8,5),
+(2,7);
