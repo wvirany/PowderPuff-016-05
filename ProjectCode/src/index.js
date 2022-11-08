@@ -92,10 +92,10 @@ app.get("/home", (req, res) => {
     var query = `SELECT * FROM resorts ORDER BY resorts.rating;`;
 
     db.any(query)
-        .then( => {
+        .then(() => {
             res.render("pages/home");
         })
-        .catch((err) {
+        .catch((err) => {
             return console.log(err);
         })
 });
