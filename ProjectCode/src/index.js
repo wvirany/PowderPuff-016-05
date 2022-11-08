@@ -42,7 +42,7 @@ app.use(
     })
 );
 
-//Get request for "/"
+//GET request for "/"
 app.get("/", (req, res) => {
     res.redirect("/login");
 });
@@ -86,6 +86,19 @@ app.get("/register", (req, res) => {
     res.render("pages/register");
 });
 
+//GET request for "/home"
+app.get("/home", (req, res) => {
+
+    var query = `SELECT * FROM resorts ORDER BY resorts.rating;`;
+
+    db.any(query)
+        .then(() => {
+            res.render("pages/home");
+        })
+        .catch((err) => {
+            return console.log(err);
+        })
+});
 
 app.listen(3000);
 console.log('Server is listening on port 3000');
