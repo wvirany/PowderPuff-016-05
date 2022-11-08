@@ -86,6 +86,32 @@ app.get("/register", (req, res) => {
     res.render("pages/register");
 });
 
+// Post request for Register
+app.post('/register', async (req, res) => {
+    //the logic goes here
+    const First_name = req.body.First_name;
+    const Last_name = req.body.Last_name;
+    const email = req.body.email;
+    const username = req.body.username;
+    const password = await bcrypt.hash(req.body.password, 10);
+  
+    db.tx(async (t) => {
+      await t.none(
+        "INSERT INTO users (First_name, Last_name, email, username, password) VALUES ($1,$2,$3,$4,$5);",
+        [First_name, Last_name, email, username, password]
+      );
+      return "Register Successfully";
+    })
+    .then((data) => {
+      console.log(data);
+      res.redirect("/login");
+    })
+    .catch((err) => {
+      console.log("Error:" + err);
+      res.redirect("/register");
+    });
+});
+
 //GET request for "/home"
 app.get("/home", (req, res) => {
 
