@@ -4,3 +4,10 @@ Meeting 1 (11/02/22) / 11:30 am - 12:30 pm
 - Decided the general format of tables and making a ER diagram.
 - Decided to focus on all resorts in Colorado.
 - Added our group project doc to repo.
+
+Meeting 2 (11/07/2022) / 5:30 pm - 8:00 pm
+ - Created merge requests for all of our individual branches that were on our local machine.
+ - Reviewed each merge request and merged all the code that was correct.
+ - Worked on the database.
+ - Worked on the different API's required.
+ - Helped each other solve some issues in our code.
