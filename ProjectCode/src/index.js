@@ -47,6 +47,39 @@ app.get("/", (req, res) => {
     res.redirect("/login");
 });
 
+// login page
+app.get("/login", (req, res) => {
+    res.render("pages/login");
+});
+
+// create the login page
+app.post("/login", async (req, res) => {
+    const query = `SELECT * FROM users WHERE users.username = $1`;
+
+    db.any(query, [req.body.username])
+        .then(async function(data) {
+            const match = await bcrypt.compare(req.body.password, data[0].password)
+                .then(match => {
+                    if(!match) {
+                        throw new Error("Incorrect username or password.")
+                    }
+                
+                req.session.user = {
+                    api_key: process.env.API_KEY,
+                };
+                req.session.save();
+                res.redirect("/home");
+                })
+            })
+
+    .catch((err) => {
+        console.log(err);
+        res.render("pages/register"),{
+            error: true,
+            message: err.message,
+        }});
+});
+
 
 
 app.listen(3000);
