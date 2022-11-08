@@ -1,0 +1,45 @@
+<%- include ('../partials/header') %> <%- include ('../partials/menu') %>
+
+<main>
+  <div class="container">
+    <!-- THE REST OF YOUR HTML CODE GOES HERE -->
+    <h1 class="text-primary"><center>Register</center></h1>
+    <div class="row">
+      <form action="/register" method="POST">
+        <div class="mb-3 mt-3">
+            <label for="email" class="form-label">First name:</label>
+            <input type="text" class="form-control" id="First name" placeholder="Enter your First name" name="First name" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Last name:</label>
+            <input type="text" class="form-control" id="Last name" placeholder="Enter your Last name" name="Last name" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="text" class="form-control" id="email" placeholder="Enter your email" name="email" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="mb-3 mt-3">
+          <label for="email" class="form-label">Username:</label>
+          <input type="text" class="form-control" id="username" placeholder="Enter Username" name="username" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">Password:</label>
+          <input type='password' class="form-control" id='password' placeholder="Enter your password" name="password" required>
+          <div class="valid-feedback">Valid.</div>
+          <div class="invalid-feedback">Please fill out this field.</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<%- include ('../partials/footer') %>
