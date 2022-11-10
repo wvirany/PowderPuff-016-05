@@ -1,0 +1,8 @@
+Week 1: (10/27/22 - 11/03/22)
+ - Made a manual database (partial for now)
+ - Created and populated the index.js file with required API's 
+ - Made the ejs files for the different pages in our website
+
+Week 2: (11/08/22 - 11/10/22)
+ - Fixed errors that led to the website not compiling properly
+ - Updated the message.ejs file and website loads correctly
