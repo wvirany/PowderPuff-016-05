@@ -2,12 +2,24 @@ Meeting 1 (11/01/22) / 3:45 pm - 4:00 pm
 - Complete TA check-in
 - All members present
 
-How do we populate the database?
-- External API's if we can find them
-- If not, we will manually enter our data
+- How do we populate the database?
+ - External API's if we can find them
+ - If not, we will manually enter our data
 
-What have we done since the last meeting?
-- Wire frames
-- Project board
-- Initial Docker file
-- Github Repo initialization
+- What have we done since the last meeting?
+ - Wire frames
+ - Project board
+ - Initial Docker file
+ - Github Repo initialization
+
+Meeting 2 (11/08/22) / 3:45 pm - 4:10 pm
+- Completed TA Check-in 
+- All members were present
+
+- Have to add release notes to our repository
+ - Forgot to add this before and we need to add it before the next lab
+
+- Every member should make at least 3 commits per week
+
+- Next lab will be deployment
+ - So we have to make sure the code compiles before the next lab
