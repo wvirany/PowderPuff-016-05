@@ -3,7 +3,7 @@ CREATE TABLE resorts(
     resort_id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     location VARCHAR(70) NOT NULL,
-    elavation int NOT NULL,
+    elevation int NOT NULL,
     annual_snowfall int,
     terrain_parks int,
     website VARCHAR(500) NOT NULL,
