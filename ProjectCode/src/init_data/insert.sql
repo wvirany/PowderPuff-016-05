@@ -49,9 +49,9 @@ insert into resorts_to_runs(resort_id, run_id) VALUES
 (4,7),
 (4,8);
 
-insert into users(username,password,email)VALUES
-('dylanE415', 'Password#123', 'dylaneilber@gmail.com'),
-('user4', 'Urmom#123', 'user4@gmail.com');
+insert into users(username,password,email, first_name, last_name)VALUES
+('dylanE415', 'Password#123', 'dylaneilber@gmail.com', 'Dylan', 'Eilber'),
+('user4', 'Urmom#123', 'user4@gmail.com', 'Your', 'Mom');
 
 insert into reviews(review_id, description, rating)VALUES
 (1,'this resort was amazing',5),
