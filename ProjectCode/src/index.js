@@ -134,6 +134,27 @@ app.get("/home", (req, res) => {
       });
   });
 
+  app.post("/resort", (req, res) => {
+  
+    var resort_id = req.body.resort_id;
+    var resort = `SELECT * FROM resorts WHERE resort_id = $1;`;
+    
+      db.one(resort,[resort_id])
+        .then((resort) => {
+          console.log(resort);
+          res.render("pages/resort", {
+            resort,
+          });
+        })
+        .catch((err) => {
+          res.render("pages/resort", {
+            resort: [],
+            error: true,
+            message: err.message,
+          });
+        });
+    });
+
 // Authentication Middleware.
 const auth = (req, res, next) => {
     if (!req.session.user) {
