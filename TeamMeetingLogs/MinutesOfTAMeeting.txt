@@ -1,6 +1,6 @@
 Meeting 1 (11/01/22) / 3:45 pm - 4:00 pm
 - Complete TA check-in
-- All members present
+- All members were present
 
 - How do we populate the database?
  - External API's if we can find them
@@ -11,6 +11,7 @@ Meeting 1 (11/01/22) / 3:45 pm - 4:00 pm
  - Project board
  - Initial Docker file
  - Github Repo initialization
+
 
 Meeting 2 (11/08/22) / 3:45 pm - 4:10 pm
 - Completed TA Check-in 
@@ -23,3 +24,15 @@ Meeting 2 (11/08/22) / 3:45 pm - 4:10 pm
 
 - Next lab will be deployment
  - So we have to make sure the code compiles before the next lab
+
+
+Meeting 3 (11/15/2022) / 3:45 pm - 4:10 pm
+ - Completed TA Check-in
+ - All members were present
+
+ - Things to do:
+   - Profile Page
+   - Reviews Feature
+   - Populating Resorts Page
+   - Final Presentation (Refer to the Project Guide)
+   - Project should be fully functional and completed by the 28th of November
