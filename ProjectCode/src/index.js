@@ -3,6 +3,7 @@ const app = express();
 const pgp = require("pg-promise")();
 const bodyParser = require("body-parser");
 const session = require("express-session");
+const bcrypt = require('bcrypt');
 
 // database configuration
 const dbConfig = {
@@ -58,7 +59,7 @@ app.post("/login", async (req, res) => {
 
     db.any(query, [req.body.username])
         .then(async function(data) {
-            const match = await bcrypt.compare(req.body.password, data[0].password)
+            const match = await bcrypt.compare(req.body.password, data.password)
                 .then(match => {
                     if(!match) {
                         throw new Error("Incorrect username or password.")
@@ -74,7 +75,7 @@ app.post("/login", async (req, res) => {
 
     .catch((err) => {
         console.log(err);
-        res.render("pages/register"),{
+        res.render("pages/login"),{
             error: true,
             message: err.message,
         }});
@@ -89,8 +90,8 @@ app.get("/register", (req, res) => {
 // Post request for Register
 app.post('/register', async (req, res) => {
     //the logic goes here
-    const First_name = req.body.First_name;
-    const Last_name = req.body.Last_name;
+    const First_name = req.body.first_name;
+    const Last_name = req.body.last_name;
     const email = req.body.email;
     const username = req.body.username;
     const password = await bcrypt.hash(req.body.password, 10);
@@ -125,6 +126,18 @@ app.get("/home", (req, res) => {
             return console.log(err);
         })
 });
+
+// Authentication Middleware.
+const auth = (req, res, next) => {
+    if (!req.session.user) {
+      // Default to register page.
+      return res.redirect('/register');
+    }
+    next();
+};
+
+// Authentication Required
+app.use(auth);
 
 //GET request for "/logout"
 app.get("/logout", (req, res) => {

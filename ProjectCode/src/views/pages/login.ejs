@@ -8,16 +8,21 @@
     <form action="/login" method="POST">
         <div class="mb-3">
             <label for="name">Username: </label>
-            <input type="text" name="username" id="name" required>
+            <input type="text" name="username" id="name" placeholder="Username" required>
         </div>
         <div class="mb-3">
             <label for="password">Password: </label>
-            <input type="password" name="password" id="password" required>
+            <input type="password" name="password" id="password" placeholder="Password"required>
         </div>
         <div class="mb-3">
             <input type="submit" value="Login">
     </form>
   </div>
+  <body>
+    <p>
+      Don't have an account? <a href = "register">Click here</a> to register!
+    </p>
+  </body>
   <div class="col"><%- include ('../partials/message') %></div>
 
 </main>
