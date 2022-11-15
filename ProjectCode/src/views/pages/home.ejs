@@ -4,23 +4,40 @@
 
 <main>
     <div class="container">
-        <table>
+        <div class="card-deck mt-3">
         <% if(resorts.length !== 0){ %>
+            <% var i = 0 %>
             <% resorts.forEach(resort =>{ %>
-                <tr>
-                    <td> <%= resort.name %></td>
-                    <td> <%= resort.location %></td>
-                    <td> <%= resort.elevation %></td>
-                    <td>
+                <% if (i % 3 === 0 || i + 1 === 1){ %>
+                    <div class="row" >
+                <%}%>
+                <div class="col-sm-4 card">
+                    <div class="card-block">
+                        <img src="<%= resort.image %>" alt="Image" height="200" width="325">
+                        <div class="container">
+                            <h4><b><%= resort.name %></b></h4>
+                            <p>Location: <%= resort.location %></p>
+                            <p>Base Elevation: <%= resort.elevation %></p>  
+                            <p>Annual Snowfall: <%= resort.annual_snowfall %></p> 
+                            <p>Terrain Parks: <%= resort.terrain_parks %></p>
+                            <a class="link" href="<%= resort.website %>">Website</a>
+                        </div>
+                    </div>
+                    <div class="card-footer">
                         <form method="post" action="/resort">
                             <input type = "hidden" name = "resort_id" value = "<%- resort.resort_id %>">
-                            <button>Go</button>
+                            <button>Visit Informational Page</button>
                         </form>
-                    </td>
-                </tr>
+                    </div>
+                </div>
+                  <% i = i + 1 %>
+                  <% if (i % 3 === 0 || i === resorts.length){ %>
+                    </div>
+                    <p>------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                    <%}%>
             <% }); %>
         <% } %>
-    </table>
+    </div>
     </div>
 </main>
 
