@@ -98,7 +98,7 @@ app.post('/register', async (req, res) => {
   
     db.tx(async (t) => {
       await t.none(
-        "INSERT INTO users (First_name, Last_name, email, username, password) VALUES ($1,$2,$3,$4,$5);",
+        "INSERT INTO users (first_name, last_name, email, username, password) VALUES ($1,$2,$3,$4,$5);",
         [first_name, last_name, email, username, password]
       );
       return "Register Successfully";
