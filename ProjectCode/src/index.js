@@ -113,20 +113,6 @@ app.post('/register', async (req, res) => {
     });
 });
 
-//GET request for "/home"
-// app.get("/home", (req, res) => {
-
-//     var resorts = `SELECT * FROM resorts ORDER BY resorts.rating;`;
-
-//     db.any(resorts)
-//         .then(resorts => {
-//             res.render("pages/home");
-//         })
-//         .catch((err) => {
-//             return console.log(err);
-//         })
-// });
-
 app.get("/home", (req, res) => {
   
   // var resorts = `SELECT * FROM resorts ORDER BY resorts.rating;`;
@@ -134,6 +120,7 @@ app.get("/home", (req, res) => {
   
     db.any(resorts)
       .then((resorts) => {
+        console.log(resorts);
         res.render("pages/home", {
           resorts,
         });
