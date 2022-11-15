@@ -11,6 +11,12 @@
                     <td> <%= resort.name %></td>
                     <td> <%= resort.location %></td>
                     <td> <%= resort.elevation %></td>
+                    <td>
+                        <form method="post" action="/resort">
+                            <input type = "hidden" name = "resort_id" value = "<%- resort.resort_id %>">
+                            <button>Go</button>
+                        </form>
+                    </td>
                 </tr>
             <% }); %>
         <% } %>
