@@ -115,12 +115,10 @@ app.post('/register', async (req, res) => {
 
 app.get("/home", (req, res) => {
   
-  // var resorts = `SELECT * FROM resorts ORDER BY resorts.rating;`;
   var resorts = `SELECT * FROM resorts;`;
   
     db.any(resorts)
       .then((resorts) => {
-        console.log(resorts);
         res.render("pages/home", {
           resorts,
         });
