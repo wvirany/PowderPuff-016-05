@@ -90,8 +90,8 @@ app.get("/register", (req, res) => {
 // Post request for Register
 app.post('/register', async (req, res) => {
     //the logic goes here
-    const First_name = req.body.first_name;
-    const Last_name = req.body.last_name;
+    const first_name = req.body.first_name;
+    const last_name = req.body.last_name;
     const email = req.body.email;
     const username = req.body.username;
     const password = await bcrypt.hash(req.body.password, 10);
@@ -99,7 +99,7 @@ app.post('/register', async (req, res) => {
     db.tx(async (t) => {
       await t.none(
         "INSERT INTO users (First_name, Last_name, email, username, password) VALUES ($1,$2,$3,$4,$5);",
-        [First_name, Last_name, email, username, password]
+        [first_name, last_name, email, username, password]
       );
       return "Register Successfully";
     })
