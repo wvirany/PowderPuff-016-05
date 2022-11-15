@@ -20,6 +20,8 @@ This week we focused on getting the infrastructure of our website put together. 
 
 New Features:
  - Created bug-free branch to prepare for deployment in Lab 12
+ - Home page
+ - Resorts page
 
 Bug Fixes:
  - Docker file is now working (See docker-compose.yaml in ProjectCode/src)
