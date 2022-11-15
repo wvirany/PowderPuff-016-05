@@ -47,7 +47,7 @@ INSERT INTO resorts_to_runs(resort_id, run_id) VALUES
 (4,7),
 (4,8);
 
-insert into users(, first_name, last_name, email, username, password)VALUES
+insert into users(first_name, last_name, email, username, password)VALUES
 ('Dylan', 'Eilber', 'dylanE415', 'dylaneilber@gmail.com', 'Password#123'),
 ('Your', 'Mom', 'user4@gmail.com', 'user4', 'Urmom#123');
 
