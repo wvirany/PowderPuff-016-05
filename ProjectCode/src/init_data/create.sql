@@ -14,9 +14,11 @@ CREATE TABLE resorts(
 DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users(
     user_id SERIAL PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL
+    username VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL
 );
 
 DROP TABLE IF EXISTS runs CASCADE;
@@ -49,4 +51,5 @@ DROP TABLE IF EXISTS resorts_to_reviews;
 CREATE TABLE resorts_to_reviews(
     resort_id INTEGER NOT NULL REFERENCES resorts (resort_id),
     review_id INTEGER NOT NULL REFERENCES  reviews (review_id)
+
 );
