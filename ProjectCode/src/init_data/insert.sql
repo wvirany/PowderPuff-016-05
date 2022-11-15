@@ -49,7 +49,7 @@ INSERT INTO resorts_to_runs(resort_id, run_id) VALUES
 
 insert into users(first_name, last_name, email, username, password)VALUES
 ('Dylan', 'Eilber', 'dylanE415', 'dylaneilber@gmail.com', 'Password#123'),
-('Your', 'Mom', 'user4@gmail.com', 'user4', 'Urmom#123');
+('Your', 'Mom', 'user4@gmail.com', 'user4', 'asdf');
 
 INSERT INTO reviews(review_id, description, rating)VALUES
 (1,'this resort was amazing',5),
