@@ -49,6 +49,7 @@ CREATE TABLE users_to_reviews(
 
 DROP TABLE IF EXISTS resorts_to_reviews;
 CREATE TABLE resorts_to_reviews(
-    review_id INTEGER NOT NULL REFERENCES reviews (review_id),
-    resort_id INTEGER NOT NULL REFERENCES  users(user_id)
+    resort_id INTEGER NOT NULL REFERENCES resorts (resort_id),
+    review_id INTEGER NOT NULL REFERENCES  reviews (review_id)
+
 );

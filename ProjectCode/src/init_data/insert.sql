@@ -27,7 +27,6 @@ INSERT INTO resorts (resort_id, name,  location, elevation, annual_snowfall, ter
   (26, 'Winter Park', 'Winter Park', 9000, 327, 7, 'https://www.winterparkresort.com/', 'https://www.coloradoski.com/sites/default/files/2018-09/CSC%20Cover.jpg'),
   (27, 'Wolf Creek', 'Pagosa Springs', 10300, 430, 0, 'https://wolfcreekski.com/wolf-creek-stats-facts/', 'https://www.powderhounds.com/site/DefaultSite/filesystem/images/USA/WolfCreek/Overview/02.jpg');
   
-  INSERT INTO runs 
 INSERT INTO runs(run_id, name, difficulty) VALUES
 (1, 'columbine', 'blue'),/* arapahoe runs  */
 (2, 'jump', 'EX'),
@@ -38,8 +37,7 @@ INSERT INTO runs(run_id, name, difficulty) VALUES
 (7, 'moonshine', 'black'),/* beaver creek */
 (8, 'centenial', 'blue');
 
-
-insert into resorts_to_runs(resort_id, run_id) VALUES
+INSERT INTO resorts_to_runs(resort_id, run_id) VALUES
 (1,1),
 (1,2),
 (2,3),
@@ -53,7 +51,7 @@ insert into users(, first_name, last_name, email, username, password)VALUES
 ('Dylan', 'Eilber', 'dylanE415', 'dylaneilber@gmail.com', 'Password#123'),
 ('Your', 'Mom', 'user4@gmail.com', 'user4', 'Urmom#123');
 
-insert into reviews(review_id, description, rating)VALUES
+INSERT INTO reviews(review_id, description, rating)VALUES
 (1,'this resort was amazing',5),
 (2,'this resort was amazing but the food was bad',4),
 (3,'this resort was mid',3),
@@ -62,7 +60,7 @@ insert into reviews(review_id, description, rating)VALUES
 (6,'the runs were amazing 10/10!',5),
 (7,'I really enjoyed my stay',4);
 
-insert into users_to_reviews(review_id,user_id)VALUES
+INSERT INTO users_to_reviews(review_id,user_id)VALUES
 (1,1),
 (2,1),
 (3,1),
@@ -71,7 +69,7 @@ insert into users_to_reviews(review_id,user_id)VALUES
 (6,2),
 (7,2);
 
-insert into resorts_to_reviews(resort_id, review_id)VALUES
+INSERT INTO resorts_to_reviews(resort_id, review_id)VALUES
 (1,1),
 (1,6),
 (2,2),
