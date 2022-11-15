@@ -141,7 +141,6 @@ app.get("/home", (req, res) => {
     
       db.one(resort,[resort_id])
         .then((resort) => {
-          console.log(resort);
           res.render("pages/resort", {
             resort,
           });
