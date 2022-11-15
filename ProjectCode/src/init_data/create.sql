@@ -42,7 +42,7 @@ CREATE TABLE reviews(
 );
 
 DROP TABLE IF EXISTS users_to_reviews;
-CREATE TABLE users_to_runs(
+CREATE TABLE users_to_reviews(
     review_id INTEGER NOT NULL REFERENCES reviews (review_id),
     user_id INTEGER NOT NULL REFERENCES users (user_id)
 );
