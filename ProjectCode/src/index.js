@@ -113,18 +113,38 @@ app.post('/register', async (req, res) => {
 });
 
 //GET request for "/home"
+// app.get("/home", (req, res) => {
+
+//     var resorts = `SELECT * FROM resorts ORDER BY resorts.rating;`;
+
+//     db.any(resorts)
+//         .then(resorts => {
+//             res.render("pages/home");
+//         })
+//         .catch((err) => {
+//             return console.log(err);
+//         })
+// });
+
 app.get("/home", (req, res) => {
-
-    var query = `SELECT * FROM resorts ORDER BY resorts.rating;`;
-
-    db.any(query)
-        .then(() => {
-            res.render("pages/home");
-        })
-        .catch((err) => {
-            return console.log(err);
-        })
-});
+  
+  // var resorts = `SELECT * FROM resorts ORDER BY resorts.rating;`;
+  var resorts = `SELECT * FROM resorts;`;
+  
+    db.any(resorts)
+      .then((resorts) => {
+        res.render("pages/home", {
+          resorts,
+        });
+      })
+      .catch((err) => {
+        res.render("pages/home", {
+          resorts: [],
+          error: true,
+          message: err.message,
+        });
+      });
+  });
 
 //GET request for "/logout"
 app.get("/logout", (req, res) => {

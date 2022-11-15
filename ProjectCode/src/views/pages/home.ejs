@@ -1,0 +1,19 @@
+<%- include ('../partials/header') %>
+<%- include ('../partials/menu') %>
+<div class="col"><%- include ('../partials/message') %></div>
+
+<main>
+    <div class="container">
+        <% if(resorts.length !== 0){ %>
+            <% resorts.forEach(course =>{ %>
+                <tr>
+                    <td> <%= resorts.name %></td>
+                    <td> <%= resorts.location %></td>
+                    <td> <%= resorts.elevation %></td>
+                </tr>
+            <% }); %>
+        <% } %>
+    </div>
+</main>
+
+<%- include ('../partials/footer') %>

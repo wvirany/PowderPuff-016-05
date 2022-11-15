@@ -40,13 +40,13 @@ CREATE TABLE reviews(
 );
 
 DROP TABLE IF EXISTS users_to_reviews;
-CREATE TABLE users_to_runs(
+CREATE TABLE users_to_reviews(
     review_id INTEGER NOT NULL REFERENCES reviews (review_id),
     user_id INTEGER NOT NULL REFERENCES users (user_id)
 );
 
 DROP TABLE IF EXISTS resorts_to_reviews;
-CREATE TABLE resort_to_reviews(
-    review_id INTEGER NOT NULL REFERENCES reviews (review_id),
-    user_id INTEGER NOT NULL REFERENCES  users(user_id)
+CREATE TABLE resorts_to_reviews(
+    resort_id INTEGER NOT NULL REFERENCES resorts (resort_id),
+    review_id INTEGER NOT NULL REFERENCES  reviews (review_id)
 );
