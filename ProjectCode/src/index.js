@@ -45,7 +45,7 @@ app.use(
 
 //GET request for "/"
 app.get("/", (req, res) => {
-    res.redirect("/login");
+    res.redirect("/home");
 });
 
 // login page
@@ -56,9 +56,10 @@ app.get("/login", (req, res) => {
 // create the login page
 app.post("/login", async (req, res) => {
     const query = `SELECT * FROM users WHERE users.username = $1`;
-
-    db.any(query, [req.body.username])
+    
+    db.one(query, [req.body.username])
         .then(async function(data) {
+          console.log(data)
             const match = await bcrypt.compare(req.body.password, data.password)
                 .then(match => {
                     if(!match) {
