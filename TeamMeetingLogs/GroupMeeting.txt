@@ -11,3 +11,8 @@ Meeting 2 (11/07/2022) / 5:30 pm - 8:00 pm
  - Worked on the database.
  - Worked on the different API's required.
  - Helped each other solve some issues in our code.
+
+Meeting 3 (11/14/2022) / 5:30 pm - 8:00 pm
+ - Decided to not make modal for each resort, instead redirecting to different pages when we click at a resort card.
+ - There should be 4 pages visible at all times, in the start, Home, Login, Register, and Resorts pages should be visible.
+ - Once logged in, profile page should be visible and reviews feature should be enabled, so users can add reviews to the resorts.
