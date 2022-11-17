@@ -1,0 +1,29 @@
+<%- include ('../partials/header') %>
+<%- include ('../partials/menu') %>
+<div class="col"><%- include ('../partials/message') %></div>
+
+<main>
+    <div class="container">
+        <h1>Welcome <% loggedin.first_name %>!</h1>
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><% loggedin.first_name %></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><% loggedin.last_name %></td>
+            </tr>
+            <tr>
+                <td>Username</td>
+                <td><% loggedin.username %></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><% loggedin.email %></td>
+            </tr>
+        </table>
+    </div>
+</main>
+
+<%- include ('../partials/footer') %>

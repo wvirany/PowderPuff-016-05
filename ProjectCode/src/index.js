@@ -4,6 +4,7 @@ const pgp = require("pg-promise")();
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const bcrypt = require('bcrypt');
+var loggedin = false;
 
 // database configuration
 const dbConfig = {
@@ -50,7 +51,9 @@ app.get("/", (req, res) => {
 
 // login page
 app.get("/login", (req, res) => {
-    res.render("pages/login");
+    res.render("pages/login", {
+      loggedin: loggedin
+    });
 });
 
 // create the login page
@@ -69,6 +72,7 @@ app.post("/login", async (req, res) => {
                 req.session.user = {
                     api_key: process.env.API_KEY,
                 };
+                loggedin = true;
                 req.session.save();
                 res.redirect("/");
                 })
@@ -82,10 +86,40 @@ app.post("/login", async (req, res) => {
         }});
 });
 
+// render the profile page
+app.get("/profile", (req, res) => {
+    res.render("pages/profile", {
+    users: req.session.username,
+    loggedin: loggedin
+  });
+});
+
+// create the profile page
+app.post("/login", async (req, res) => {
+    const query = `SELECT * FROM users WHERE users.username = $1`;
+        
+    db.any(query, [req.session.username])
+        .then(async function(data) {
+          console.log(data)
+      
+                loggedin = true;
+                req.session.save();
+                res.redirect("/");
+                })
+
+    .catch((err) => {
+        console.log(err);
+        res.render("pages/login"),{
+            error: true,
+            message: err.message,
+        }});
+});
 
 // Get request for Register
 app.get("/register", (req, res) => {
-    res.render("pages/register");
+    res.render("pages/register", {
+      loggedin: loggedin
+    });
 });
 
 // Post request for Register
@@ -122,6 +156,7 @@ app.get("/home", (req, res) => {
       .then((resorts) => {
         res.render("pages/home", {
           resorts,
+          loggedin: loggedin
         });
       })
       .catch((err) => {
@@ -142,6 +177,7 @@ app.get("/home", (req, res) => {
         .then((resort) => {
           res.render("pages/resort", {
             resort,
+            loggedin: loggedin
           });
         })
         .catch((err) => {
@@ -167,8 +203,11 @@ app.use(auth);
 
 //GET request for "/logout"
 app.get("/logout", (req, res) => {
+   loggedin = false;
     req.session.destroy();
-    res.render("pages/logout");
+    res.render("pages/logout", {
+      loggedin: loggedin
+    });
   });
 
 app.listen(3000);
