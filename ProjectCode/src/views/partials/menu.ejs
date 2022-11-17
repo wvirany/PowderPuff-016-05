@@ -14,13 +14,19 @@
           </div>
         </div>
 
+        <!-- Buttons if not logged in -->
+        <% if (!locals.loggedin){ %>
+          <a class="nav-link navbar-text" href="/login">Login</a>
+          <a class="nav-link navbar-text" href="/register">Register</a>
+        <% } else { %>
+          <!-- Buttons if logged in -->
+          <a class="nav-link navbar-text" href="/profile">Profile</a>
+          <a class="nav-link navbar-text" href="/logout">Logout</a>
+        <% } %>
+
         <!-- Nav Bar icon-->
-        <a class="nav-link navbar-text" href="/login">Login</a>
-        <a class="nav-link navbar-text" href="/register">Register</a>
-        <a class="nav-link navbar-text" href="/profile">Profile</a>
-        <a class="nav-link navbar-text" href="/logout">Logout</a>
-        <a class="navbar-brand" href="https://github.com/danielevarone" rel="noopener noreferrer" target="_blank">
-          <img src="../../resources/img/skier-logo.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        <a class="navbar-brand" href="home" rel="noopener noreferrer">
+          <img src="../../../../ProjectCode/src/resources/img/slope-search-logo.png" alt="Logo" height="30" class="d-inline-block align-text-top">
         </a>
 
       </div>
