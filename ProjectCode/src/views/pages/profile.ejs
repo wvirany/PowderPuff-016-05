@@ -4,23 +4,23 @@
 
 <main>
     <div class="container">
-        <h1>Welcome <% loggedin.first_name %>!</h1>
+        <h1>Welcome <%= data.first_name %>!</h1>
         <table>
             <tr>
-                <td>First Name</td>
-                <td><% loggedin.first_name %></td>
+                <td>First Name: </td>
+                <td><%= data.first_name %></td>
             </tr>
             <tr>
-                <td>Last Name</td>
-                <td><% loggedin.last_name %></td>
+                <td>Last Name: </td>
+                <td><%= data.last_name %></td>
             </tr>
             <tr>
-                <td>Username</td>
-                <td><% loggedin.username %></td>
+                <td>Username: </td>
+                <td><%= data.username %></td>
             </tr>
             <tr>
-                <td>Email</td>
-                <td><% loggedin.email %></td>
+                <td>Email: </td>
+                <td><%= data.email %></td>
             </tr>
         </table>
     </div>

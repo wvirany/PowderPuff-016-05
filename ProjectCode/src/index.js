@@ -70,7 +70,8 @@ app.post("/login", async (req, res) => {
                     }
                 
                 req.session.user = {
-                    api_key: process.env.API_KEY,
+                  user_id : data.user_id,
+                  api_key: process.env.API_KEY
                 };
                 loggedin = true;
                 req.session.save();
@@ -87,33 +88,27 @@ app.post("/login", async (req, res) => {
 });
 
 // render the profile page
-app.get("/profile", (req, res) => {
-    res.render("pages/profile", {
-    users: req.session.username,
-    loggedin: loggedin
+app.get("/profile", async (req, res) => {
+    var user_id = req.session.user.user_id;
+    var user = `SELECT * FROM users WHERE users.user_id = $1`;
+    console.log(req.session.user.user_id);
+
+    await db.one(user, [user_id])
+      .then(data => {
+        console.log(data[0])
+        res.render('pages/profile',{
+          loggedin: loggedin,
+          data,
+        });
+      })
+      .catch(err => {
+        res.render('pages/profile',{
+          data:[],
+          error: true,
+          message: err.message,
+        });
+      });
   });
-});
-
-// create the profile page
-app.post("/login", async (req, res) => {
-    const query = `SELECT * FROM users WHERE users.username = $1`;
-        
-    db.any(query, [req.session.username])
-        .then(async function(data) {
-          console.log(data)
-      
-                loggedin = true;
-                req.session.save();
-                res.redirect("/");
-                })
-
-    .catch((err) => {
-        console.log(err);
-        res.render("pages/login"),{
-            error: true,
-            message: err.message,
-        }});
-});
 
 // Get request for Register
 app.get("/register", (req, res) => {
