@@ -1,87 +1,42 @@
-<!DOCTYPE html>
-
-<html>
-  <head>
-    
-    <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-  crossorigin="anonymous"/>
-
-  <script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-  crossorigin="anonymous"></script>
-
-  <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-<script src="/Users/dylaneilber/Desktop/3308/lab5-javascript-DylanE415/Calendar/resources/js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.js"></script>
+<script src="modal.js"></script>
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
 
+<div id="myModal" class="modal fade" role="dialog">
+<div class="modal-dialog">
 
-  </head>
-  <body onload="initialize_content()">
-    <div class="container">
-        <div id="calendar">
-            
-        </div>
-    </div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Create Event</button>
-    
-    
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Create Event</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            
-            <form>
-              <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Name:</label>
-                <input type="text" class="form-control" id="user-name">
-              </div>
-              
-              <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Weekday:</label>
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><button class="dropdown-item" type="button">Sunday</button></li>
-                      <li><button class="dropdown-item" type="button">Monday</button></li>
-                      <li><button class="dropdown-item" type="button">Teusday</button></li>
-                      <li><button class="dropdown-item" type="button">Wednesday</button></li>
-                      <li><button class="dropdown-item" type="button">Thursday</button></li>
-                      <li><button class="dropdown-item" type="button">Friday</button></li>
-                      <li><button class="dropdown-item" type="button">Saturday</button></li>
-                    </ul>
-                  </div>
-              </div>
-              <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">time:</label>
-                <input type="time" class="form-control" id="time-name">
-              </div>
-              <div class="mb-3">
-                <label for="recipient-name" class="col-form-label">Review:</label>
-                <textarea class="form-control" id="attendees-text"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Create Event</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-  </body>
-</html>
+<div class="modal-content">
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <h4 class="modal-title">Resort Feedback</h4>
+</div>
+<div class="modal-body">
+<div id="message" style="text-align: center; color: green;"></div>
+ <div class="form-group"> 
+  <span id="updatecapacitymodalerrortext" style="color:red"></span> 
+
+</div>
+<label style="display:inline-block;" for="input-1" class="control-label">Rating</label>
+<div style="display:inline-block;" id="rateYo"></div>
+<input type="hidden" name="rating" id="rating_input"/>
+<br/>
+<div class="mb-3">
+    <label for="recipient-name" class="col-form-label">Review:</label>
+    <textarea class="form-control" id="attendees-text"></textarea>
+  </div>
+<button type="button" id="updateCapacityBtn" class="btn btn-info ">Save</button>
+<button type="button" id="capacityModalClose" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</div> 
+<div class="modal-footer">
+</div>
+
+</div>
+</div>
