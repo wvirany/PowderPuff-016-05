@@ -14,6 +14,16 @@ Pankaj Behera, PankajBehera3647, pabe3647@colorado.edu
 
 Release Notes:
 
+Week 4: (11/17/22 - 11/24/22)
+
+New Features:
+ - Profile Page complete.
+ - Added color to the footer.
+ - Added a starting Welcome message to our Home page.
+
+Bug Fixes:
+ - Profile page was not displaying any data, we figured out the correct way to populate and display the user's data in the profile page.
+
 Week 3: (11/10/22 - 11/17/22)
 
 This week we focused on getting the infrastructure of our website put together. We fixed bugs involving initializing our docker file and database initialization, and now our web pages are loading the way we expect them to. We also created a bug-free branch to be ready for deployment in Lab 12.
