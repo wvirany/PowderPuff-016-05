@@ -95,7 +95,6 @@ app.get("/profile", async (req, res) => {
 
     await db.one(user, [user_id])
       .then(data => {
-        console.log(data[0])
         res.render('pages/profile',{
           loggedin: loggedin,
           data,
@@ -134,7 +133,6 @@ app.post('/register', async (req, res) => {
       return "Register Successfully";
     })
     .then((data) => {
-      console.log(data);
       res.redirect("/login");
     })
     .catch((err) => {
