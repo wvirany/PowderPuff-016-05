@@ -4,22 +4,36 @@
 
 <main>
     <div class="container">
-        <h1>Welcome <%= data.first_name %>!</h1>
+        <h1><center>Welcome <%= data.first_name %>!</center></h1>
+        <style>
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            th, td {
+              padding: 20px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;
+            }
+        </style>
         <table>
+            <col style="width:50%">
+	        <col style="width:50%">
             <tr>
-                <td>First Name: </td>
+                <th>First Name</th>
                 <td><%= data.first_name %></td>
             </tr>
             <tr>
-                <td>Last Name: </td>
+                <th>Last Name</th>
                 <td><%= data.last_name %></td>
             </tr>
             <tr>
-                <td>Username: </td>
+                <th>Username</th>
                 <td><%= data.username %></td>
             </tr>
             <tr>
-                <td>Email: </td>
+                <th>Email</th>
                 <td><%= data.email %></td>
             </tr>
         </table>
