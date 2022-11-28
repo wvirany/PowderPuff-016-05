@@ -3,15 +3,13 @@
 <div class="col"><%- include ('../partials/message') %></div>
 
 <main>
-    <center><h1>Hello Everyone! Welcome to PowderPuff!</h1></center>
+    <center><p style="font-family: impact"><h1><b>Welcome to PowderPuff!</b></h1></p></center>
     <center>
-        <h3>If you are planning to decide on which resort in Colorado you want to visit next, then you've come to the right place!</h5>
-        <h5>You can scroll down and look at all the different resorts in Colorado by clicking the "Website" button and visit their offical website.</h5>
-        <h5>You can also view the reviews that several other users like you have given for each resort by using the "Visit Informational Page" button</h5>
-        <h5>You can make a new account on our website if you <a href = "register">Click here</a> or through the "Register" tab on the navigation bar.</h5>
-        <h5>If you already have an account, you can login if you <a href = "login">Click here</a> or through the "Login" tab on the navigation bar.</h5>
-        <h5> Once you login, you can add your own reviews to any of the resorts based on your experience and give a rating as well!</h5>
+    <h3>--------------------------------------------------------------------------------------------------------------------------------------------</h3>
+    <p style="font-family: georgia">You can scroll down and look at all the different resorts in Colorado. You can view more information on each resort by using the "Visit Informational Page" button. You can make a new account on our website if you <a href = "register">Click here</a>.</p>
+    <p style="font-family: georgia">If you already have an account, you can login if you <a href = "login">Click here</a>. Once you login, you can add your own reviews to any of the resorts based on your experience and give a rating as well!</p>
     </center>
+
     <div class="container">
         <div class="card-deck mt-3">
         <% if(resorts.length !== 0){ %>
@@ -39,7 +37,7 @@
                   <% i = i + 1 %>
                   <% if (i % 3 === 0 || i === resorts.length){ %>
                     </div>
-                    <p>------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+                    <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
                     <%}%>
             <% }); %>
         <% } %>
