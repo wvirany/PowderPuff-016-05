@@ -22,7 +22,7 @@ New Features:
 
 Bug Fixes:
  - None yet.
- 
+
 Week 4: (11/17/22 - 11/24/22)
 
 New Features:
@@ -30,8 +30,6 @@ New Features:
  - Added color to the footer.
  - Added a starting Welcome message to our Home page.
  - Added some style to Resorts Page.
- - Added style to Profile Page.
- - Made the Home page more appealing.
 
 Bug Fixes:
  - Profile page was not displaying any data, we figured out the correct way to populate and display the user's data in the profile page.
