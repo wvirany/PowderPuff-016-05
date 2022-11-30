@@ -118,6 +118,13 @@ app.get("/register", (req, res) => {
     });
 });
 
+// about page
+app.get("/about", (req, res) => {
+  res.render("pages/about", {
+    loggedin: loggedin,
+  });
+});
+
 // Post request for Register
 app.post('/register', async (req, res) => {
     //the logic goes here
