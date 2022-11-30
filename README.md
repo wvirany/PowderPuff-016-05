@@ -19,9 +19,10 @@ Week 5: (11/24/22 - 12/01/22)
 New Features:
  - Added style to Profile Page.
  - Made the Home page more appealing.
+ - Added an image to the home page.
 
 Bug Fixes:
- - None yet.
+ - Fixed the review modal and now the modal opens up and a user can add their review and rate their experience with stars.
 
 Week 4: (11/17/22 - 11/24/22)
 

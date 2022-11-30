@@ -1,5 +1,5 @@
 Meeting 1 (11/01/22) / 3:45 pm - 4:00 pm
-- Complete TA check-in
+- Completed TA check-in
 - All members were present
 
 - How do we populate the database?
@@ -36,3 +36,13 @@ Meeting 3 (11/15/2022) / 3:45 pm - 4:10 pm
    - Populating Resorts Page
    - Final Presentation (Refer to the Project Guide)
    - Project should be fully functional and completed by the 28th of November
+
+Meeting 4 (11/29/2022) / 11:00 am - 11:20 am
+ - Completed TA Check-in
+ - All members were present
+
+ - Selected a timing for our Presentation
+ - Showed our project to the TA for Reviews
+ - Made a plan of how the flow of our website should be
+ - Cleared up questions we had about the presentation
+
