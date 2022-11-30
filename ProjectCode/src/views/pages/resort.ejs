@@ -52,3 +52,52 @@
     </div>
     <%- include ('../partials/modal') %>
 </main>
+=======
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Location: <%= resort.location %></li>
+            <li class="list-group-item">Elevation: <%= resort.elevation %></li>
+            <li class="list-group-item">Annual Snowfall: <%= resort.annual_snowfall %></li>
+            <li class="list-group-item">Number of Terrain Parks: <%= resort.terrain_parks %></li>
+            <li class="list-group-item"><a class="link" href="<%= resort.website %>">Website</a></li>
+            <li class="list-group-item">
+
+                <button type="button btn-primary" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Write a Review</button>
+
+
+                <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+
+                <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Resort Feedback</h4>
+                </div>
+                <div class="modal-body">
+                <div id="message" style="text-align: center; color: green;"></div>
+                 <div class="form-group"> 
+                  <span id="updatecapacitymodalerrortext" style="color:red"></span> 
+
+                </div>
+                <label style="display:inline-block;" for="input-1" class="control-label">Rating</label>
+                <div style="display:inline-block;" id="rateYo"></div>
+                <input type="hidden" name="rating" id="rating_input"/>
+                <br/>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Review:</label>
+                    <textarea class="form-control" id="attendees-text"></textarea>
+                  </div>
+                <button type="button" id="updateCapacityBtn" class="btn btn-info ">Save</button>
+                <button type="button" id="capacityModalClose" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div> 
+                <div class="modal-footer">
+                </div>
+
+                </div>
+                </div>
+            </li>
+          </ul>
+    </div>
+    <%- include ('../partials/modal') %>
+</main>
