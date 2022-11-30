@@ -82,10 +82,9 @@ app.post("/login", async (req, res) => {
 
     .catch((err) => {
         console.log(err);
-        please = true;
         res.render("pages/login"),{
             error: true,
-            message: err.message,
+            message: `Incorrect username or password.`,
         }});
 });
 
