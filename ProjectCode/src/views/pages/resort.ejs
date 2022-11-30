@@ -3,17 +3,56 @@
 <div class="col"><%- include ('../partials/message') %></div>
 
 <main>
+  <div style="position: relative; text-align: center; color: rgb(86, 86, 86);">
+    <img src="<%= resort.image %>" alt="snowy-mountain" width="100%" height="350px" style="object-fit: cover;">
+    <div class="centered" style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 255, 0.8); padding-left: 15px; padding-right:15px">
+        <h1><b><%= resort.name %></b></h1>
+    </div>
     <div class="container">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"> <img src="<%= resort.image %>" alt="Image" height="200" width="325"> </li>
-            <li class="list-group-item">Resort Name: <%= resort.name %></li>
             <li class="list-group-item">Location: <%= resort.location %></li>
             <li class="list-group-item">Elevation: <%= resort.elevation %></li>
             <li class="list-group-item">Annual Snowfall: <%= resort.annual_snowfall %></li>
             <li class="list-group-item">Number of Terrain Parks: <%= resort.terrain_parks %></li>
             <li class="list-group-item"><a class="link" href="<%= resort.website %>">Website</a></li>
             <li class="list-group-item">
-                
+
+                <button type="button btn-primary" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Write a Review</button>
+
+
+                <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+
+                <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Resort Feedback</h4>
+                </div>
+                <div class="modal-body">
+                <div id="message" style="text-align: center; color: green;"></div>
+                 <div class="form-group"> 
+                  <span id="updatecapacitymodalerrortext" style="color:red"></span> 
+
+                </div>
+                <label style="display:inline-block;" for="input-1" class="control-label">Rating</label>
+                <div style="display:inline-block;" id="rateYo"></div>
+                <input type="hidden" name="rating" id="rating_input"/>
+                <br/>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Review:</label>
+                    <textarea class="form-control" id="attendees-text"></textarea>
+                  </div>
+                <button type="button" id="updateCapacityBtn" class="btn btn-info ">Save</button>
+                <button type="button" id="capacityModalClose" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div> 
+                <div class="modal-footer">
+                </div>
+
+                </div>
+                </div>
+main
             </li>
           </ul>
     </div>

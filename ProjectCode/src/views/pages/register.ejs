@@ -1,9 +1,13 @@
 <%- include ('../partials/header') %> <%- include ('../partials/menu') %>
 
 <main>
-  <div class="container">
+  <div style="width: 100%;">
+    <div style="float:left; width: 30%">
+      <img src="https://images.unsplash.com/photo-1516352267226-f5f3e4c53781?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=966&q=80" alt="skier-shredding" width="100%" height="100%" style="float: left; object-fit: cover;">
+    </div>
+  <div class="container" style="padding-left: 25%;">
     <!-- THE REST OF YOUR HTML CODE GOES HERE -->
-    <h1 class="text-primary"><center>Register</center></h1>
+    <h1 class="text-primary">Register</h1>
     <div class="row">
       <form action="/register" method="POST">
         <div class="mb-3 mt-3">
@@ -40,12 +44,12 @@
       </form>
     </div>
     <body>
-      <center>
+      <p></p>
       <p>
         Already have an account? <a href = "login">Click here</a> to login!
       </p>
-    </center>
     </body>
+  </div>
   </div>
 </main>
 

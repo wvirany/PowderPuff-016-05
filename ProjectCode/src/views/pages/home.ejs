@@ -1,47 +1,52 @@
 <%- include ('../partials/header') %>
 <%- include ('../partials/menu') %>
+
 <div class="col"><%- include ('../partials/message') %></div>
 
 <main>
-    <center><p style="font-family: impact"><h1><b>Welcome to PowderPuff!</b></h1></p></center>
-    <center>
-    <h3>--------------------------------------------------------------------------------------------------------------------------------------------</h3>
-    <p style="font-family: georgia">You can scroll down and look at all the different resorts in Colorado. You can view more information on each resort by using the "Visit Informational Page" button. You can make a new account on our website if you <a href = "register">Click here</a>.</p>
-    <p style="font-family: georgia">If you already have an account, you can login if you <a href = "login">Click here</a>. Once you login, you can add your own reviews to any of the resorts based on your experience and give a rating as well!</p>
-    </center>
-
-    <div class="container">
-        <div class="card-deck mt-3">
-        <% if(resorts.length !== 0){ %>
-            <% var i = 0 %>
-            <% resorts.forEach(resort =>{ %>
-                <% if (i % 3 === 0 || i + 1 === 1){ %>
-                    <div class="row" >
-                <%}%>
-                <div class="col-sm-4 card">
-                    <div class="card-block">
-                        <img src="<%= resort.image %>" alt="Image" height="200" width="325">
-                        <div class="container text-center">
-                            <p></p>
-                            <h5><b><%= resort.name %></b></h5>
-                            <p>Location: <%= resort.location %></p>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <form method="post" action="/resort">
-                            <input type = "hidden" name = "resort_id" value = "<%- resort.resort_id %>">
-                            <button>Visit Informational Page</button>
-                        </form>
-                    </div>
-                </div>
-                  <% i = i + 1 %>
-                  <% if (i % 3 === 0 || i === resorts.length){ %>
-                    </div>
-                    <p>---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
-                    <%}%>
-            <% }); %>
-        <% } %>
+    <div style="position: relative; text-align: center; color: rgb(86, 86, 86);">
+        <img src="https://images.unsplash.com/photo-1418290368169-1c94e6683532?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="snowy-mountain" width="100%" height="350px" style="object-fit: cover;">
+        <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 255, 0.8); padding-left: 15px; padding-right:15px">
+            <p><h1><b>Welcome to Slope Search!</b></h1></p>
+            <p>You can scroll down and look at all the different resorts in Colorado. You can view more information on each resort by using the "Visit Informational Page" button. You can make a new account on our website if you <a href = "register">Click here</a>.</p>
+            <p>If you already have an account, you can login if you <a href = "login">Click here</a>. Once you login, you can add your own reviews to any of the resorts based on your experience and give a rating as well!</p>
+        </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card-deck mt-3">
+                <% if(resorts.length !== 0){ %>
+                    <% var i = 0 %>
+                    <% resorts.forEach(resort =>{ %>
+                        <% if (i % 3 === 0 || i + 1 === 1){ %>
+                            <div class="row" >
+                        <%}%>
+                        <div class="col-sm-6 card">
+                            <!-- <img class="card-img-top" src="<%= resort.image %>" alt="<%= resort.resort_id %>" height="200" width="100%" style="object-fit: cover"> -->
+                            <div class="card-body">
+                                <img src="<%= resort.image %>" alt="Image" height="200" width="100%" style="object-fit: cover" padding-top="25px">
+                                <div class="container text-center">
+                                    <p></p>
+                                    <h5><b><%= resort.name %></b></h5>
+                                    <p>Location: <%= resort.location %></p>
+                                    <form method="post" action="/resort">
+                                        <input type = "hidden" name = "resort_id" value = "<%- resort.resort_id %>">
+                                        <button class="btn btn-primary">Check it out!</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <% i = i + 1 %>
+                        <% if (i % 3 === 0 || i === resorts.length){ %>
+                            </div>
+                            <p></p>
+                            <%}%>
+                    <% }); %>
+                <% } %>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 

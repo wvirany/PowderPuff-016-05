@@ -3,8 +3,13 @@
 <div class="col"><%- include ('../partials/message') %></div>
 
 <main>
+    <div style="position: relative; text-align: center; color: rgb(86, 86, 86);">
+        <img src="https://images.unsplash.com/photo-1596473536056-91eadf31189e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="skier-profile" width="100%" height="350px" style="object-fit: cover;">
+        <div class="centered" style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 255, 0.8); padding-left: 15px; padding-right:15px">
+            <h1><b>Welcome <%= data.first_name %>!</b></h1>
+    </div>
     <div class="container">
-        <h1><center>Welcome <%= data.first_name %>!</center></h1>
+        <!-- <h1><center>Welcome <%= data.first_name %>!</center></h1> -->
         <style>
             table {
               border-collapse: collapse;
