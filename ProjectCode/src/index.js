@@ -51,10 +51,11 @@ app.get("/", (req, res) => {
 
 // login page
 app.get("/login", (req, res) => {
-    res.render("pages/login", {
-      loggedin: loggedin
-    });
+  res.render("pages/login", {
+    loggedin: loggedin,
+  });
 });
+
 
 // create the login page
 app.post("/login", async (req, res) => {
@@ -81,11 +82,13 @@ app.post("/login", async (req, res) => {
 
     .catch((err) => {
         console.log(err);
+        please = true;
         res.render("pages/login"),{
             error: true,
             message: err.message,
         }});
 });
+
 
 // render the profile page
 app.get("/profile", async (req, res) => {
@@ -196,10 +199,11 @@ app.use(auth);
 
 //GET request for "/logout"
 app.get("/logout", (req, res) => {
-   loggedin = false;
+    loggedin = false;
     req.session.destroy();
-    res.render("pages/logout", {
-      loggedin: loggedin
+    res.render("pages/login", {
+      loggedin: loggedin,
+      message: `Logged out successfully!`
     });
   });
 
