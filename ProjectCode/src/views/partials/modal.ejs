@@ -5,6 +5,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.js"></script>
+
+
+<form action="login.php" method="POST" id="form1">
 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
 
@@ -47,12 +50,13 @@
     <label for="recipient-name" class="col-form-label">Review:</label>
     <textarea class="form-control" id="attendees-text"></textarea>
   </div>
-<button type="button" id="updateCapacityBtn" class="btn btn-info ">Save</button>
-<button type="button" id="capacityModalClose" class="btn btn-default" data-dismiss="modal">Close</button>
 </div>
 </div> 
 <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    <a href="#" id="submit" class="btn btn-success success">Submit</a>
 </div>
 
 </div>
 </div>
+</form>
