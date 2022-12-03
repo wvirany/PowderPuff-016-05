@@ -76,7 +76,7 @@ app.post("/login", async (req, res) => {
                 };
                 loggedin = true;
                 req.session.save();
-                res.redirect("/");
+                res.redirect("/")
                 })
             })
 
